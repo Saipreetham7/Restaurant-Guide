@@ -3,7 +3,9 @@
 A full-stack application that serves as a guide-like website introducing users to various restaurants. The application has a user-friendly frontend built with React and TypeScript, and a structured backend that interacts with the Google Places API.
 
 <p><b>Here is a recored video of Application</b></p>
-https://github.com/Saipreetham7/assets/0b5bc588-00fd-4f47-8d08-e588e8e3a4d8
+https://github.com/user-attachments/assets/da51ecfc-7739-4fca-a57c-22fc722683f6
+
+
 
 ## 📋 Features
 
