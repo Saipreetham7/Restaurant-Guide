@@ -7,7 +7,6 @@ A full-stack application that serves as a guide-like website introducing users t
 - Overview page displaying a list of restaurants with search functionality
 - Detail view for each restaurant with information, photos, and location
 - Interactive map showing restaurant locations using Leaflet
-- Location-based filtering to discover restaurants in specific areas
 - Responsive design that works on both desktop and mobile devices
 - Containerized application using Docker for easy deployment
 
@@ -28,6 +27,41 @@ A full-stack application that serves as a guide-like website introducing users t
 - React Router
 - Leaflet Maps
 - Docker
+
+## 🛠️ Project Structure
+
+```
+restaurant-guide/
+├── backend/                # Backend code
+│   ├── src/
+│   │   ├── controllers/    # Request handlers
+│   │   ├── routes/         # API route definitions
+│   │   ├── services/       # Business logic & API calls
+│   │   ├── types/          # TypeScript interfaces
+│   │   └── index.ts        # Application entry point
+│   ├── .env                # Environment variables
+│   ├── Dockerfile          # Docker configuration
+│   └── package.json
+│
+├── frontend/               # Frontend code
+│   ├── src/
+│   │   ├── assets/         # Static assets
+│   │   ├── components/     # React components
+│   │   ├── hooks/          # Custom React hooks
+│   │   ├── pages/          # Page components
+│   │   ├── services/       # API service modules
+│   │   ├── types/          # TypeScript interfaces
+│   │   ├── App.tsx         # Main component
+│   │   └── main.tsx        # Application entry point
+│   ├── .env.local          # Environment variables
+│   ├── Dockerfile          # Docker configuration
+│   └── package.json
+│
+├── docker-compose.yml      # Docker Compose configuration
+├── .env.backend            # Backend environment variables for Docker
+├── .env.frontend           # Frontend environment variables for Docker
+└── README.md               # Project documentation
+```
 
 ## 🚀 Getting Started
 
@@ -124,41 +158,6 @@ docker pull saipreetham7/restaurant-guide-frontend:1.0
 docker pull saipreetham7/restaurant-guide-backend:1.0
 ```
 
-## 🛠️ Project Structure
-
-```
-restaurant-guide/
-├── backend/                # Backend code
-│   ├── src/
-│   │   ├── controllers/    # Request handlers
-│   │   ├── routes/         # API route definitions
-│   │   ├── services/       # Business logic & API calls
-│   │   ├── types/          # TypeScript interfaces
-│   │   └── index.ts        # Application entry point
-│   ├── .env                # Environment variables
-│   ├── Dockerfile          # Docker configuration
-│   └── package.json
-│
-├── frontend/               # Frontend code
-│   ├── src/
-│   │   ├── assets/         # Static assets
-│   │   ├── components/     # React components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
-│   │   ├── services/       # API service modules
-│   │   ├── types/          # TypeScript interfaces
-│   │   ├── App.tsx         # Main component
-│   │   └── main.tsx        # Application entry point
-│   ├── .env.local          # Environment variables
-│   ├── Dockerfile          # Docker configuration
-│   └── package.json
-│
-├── docker-compose.yml      # Docker Compose configuration
-├── .env.backend            # Backend environment variables for Docker
-├── .env.frontend           # Frontend environment variables for Docker
-└── README.md               # Project documentation
-```
-
 ## 📱 Application Features in Detail
 
 ### Restaurant Listing
@@ -171,11 +170,6 @@ restaurant-guide/
 - Photo gallery with carousel navigation
 - Opening hours with current day highlighted
 - Map showing the restaurant's exact location
-
-### Location-Based Search
-- Filter restaurants by specific geographic areas
-- Predefined locations for easy navigation
-- Map view showing all restaurants in the selected area
 
 ### User Interface
 - Clean, responsive design that works on all devices
@@ -191,8 +185,6 @@ The backend is built with Fastify and TypeScript, focusing on providing a clean 
 Key endpoints:
 - `GET /restaurants` - Returns a list of restaurants
 - `GET /restaurants/:id` - Returns details for a specific restaurant
-- `GET /locations` - Returns a list of available locations
-- `GET /locations/:id` - Returns details for a specific location
 
 ### Frontend Development
 
@@ -202,7 +194,6 @@ Key components:
 - `HomePage` - Main page displaying the restaurant list and map
 - `RestaurantDetailPage` - Detailed view of a single restaurant
 - `RestaurantMap` - Interactive map component
-- `LocationFilter` - Filter for selecting different areas
 
 ## 🚢 Deployment
 
@@ -252,13 +243,3 @@ The application is containerized using Docker, making it easy to deploy to any e
 
 #### Frontend Environment Variables:
 - `VITE_API_URL` - URL of the backend API
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgements
-
-- Google Places API for providing restaurant data
-- OpenStreetMap and Leaflet for mapping functionality
-- All open-source libraries used in this project
